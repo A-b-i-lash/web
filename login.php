@@ -28,9 +28,10 @@ $stmt->fetch();
 if ($stmt->num_rows > 0 && password_verify($password, $hashedPassword)) {
     echo "Login successful!";
     // Redirect to a dashboard or another page
-    // header("Location: dashboard.php");
+    header("Location: hi.html");
 } else {
     echo "Invalid username or password.";
+    header("Location: hi.html");
 }
 
 // Close connections
