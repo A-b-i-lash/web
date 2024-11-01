@@ -30,6 +30,11 @@
             color: white;
             border: none;
             cursor: pointer;
+            width: 100%;
+        }
+        #message {
+            margin-top: 10px;
+            color: red;
         }
     </style>
 </head>
@@ -37,31 +42,13 @@
 
 <div class="login-container">
     <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button onclick="login()">Login</button>
+    <form id="loginForm" action="login.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
     <p id="message"></p>
 </div>
-
-<script>
-    function login() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        // Hardcoded credentials
-        const validUsername = 'user';
-        const validPassword = 'pass';
-
-        if (username === validUsername && password === validPassword) {
-            document.getElementById('message').innerText = 'Login successful!';
-            document.getElementById('message').style.color = 'green';
-            // Redirect or perform another action
-        } else {
-            document.getElementById('message').innerText = 'Invalid username or password.';
-            document.getElementById('message').style.color = 'red';
-        }
-    }
-</script>
 
 </body>
 </html>
